@@ -11,16 +11,27 @@ Complete roadmap is here :
     
     3. Detect dogs
     
-    4. Creating a CNN (from scratch)
+    4. Creating a CNN to detect dog breed(from scratch)
     
-    5. Use a pretrained CNN (from transfer learning)
+    5. Use a pretrained CNN to detect dog breed(from transfer learning)
     
     6. Write final algorithm
     
     7. Prediction
     
-## step 1 : Import dataset
+What is CNN and why CNN?
+A CNN is a supervised learning technique which needs both input data and target output data to be supplied. These are classified by using their labels in order to provide a learned model for future data analysis.
+
+Typically a CNN has three main constituents - a Convolutional Layer, a Pooling Layer and a Fully connected Dense Network. The Convolutional layer takes the input image and applies m number of nxn filters to receive a feature map. The feature map is next fed into the max pool layer which is essentially used for dimensionality reduction, it picks only the best features from the feature map. Finally, all the features are flattened and sent as input to the fully connected dense neural network which learns the weights using backpropagation and provides the classification output.
+    
+## Step 1 : Import dataset
 The dog dataset was downloaded from (https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip), the human dataset was downloaded from (https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip). 
 
 There were 133 total dog categories, 8351 total dog images, 6680 training dog images, 835 validation dog images, 836 test dog images and 13233 total human images.
+
+## Step 2 : Detect humans
+We used OpenCV's implementation of Haar feature-based cascade classifiers to detect human faces in images. OpenCV provides many pre-trained face detectors, stored as XML files on github(https://github.com/opencv/opencv/tree/master/data/haarcascades). We have downloaded one of these detectors and stored. Then we used this classifier to detect human faces in the image 
+
+## Step 3 : Detect dogs
+Here we used a pre-trained ResNet-50 model (a very deep CNN model) to detect dogs in images. Same weights that have trained on ImageNet dataset (a very large, very popular dataset having over 10 million images and over 1000 different categories) were used.
 
