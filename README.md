@@ -19,10 +19,13 @@ Complete roadmap is here :
     
     7. Prediction
     
-What is CNN and why CNN?
+What is CNN and why CNN ?
+
 A CNN is a supervised learning technique which needs both input data and target output data to be supplied. These are classified by using their labels in order to provide a learned model for future data analysis.
 
 Typically a CNN has three main constituents - a Convolutional Layer, a Pooling Layer and a Fully connected Dense Network. The Convolutional layer takes the input image and applies m number of nxn filters to receive a feature map. The feature map is next fed into the max pool layer which is essentially used for dimensionality reduction, it picks only the best features from the feature map. Finally, all the features are flattened and sent as input to the fully connected dense neural network which learns the weights using backpropagation and provides the classification output.
+
+Compared to MLP (Multilayer Perceptron) classifier, CNN gives better results as the MLP classifier takes a vector as input where as the CNN takes a 4-D Tensor as input (Thus having the spatial information)
     
 ## Step 1 : Import dataset
 The dog dataset was downloaded from (https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip), the human dataset was downloaded from (https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip). 
@@ -34,4 +37,9 @@ We used OpenCV's implementation of Haar feature-based cascade classifiers to det
 
 ## Step 3 : Detect dogs
 Here we used a pre-trained ResNet-50 model (a very deep CNN model) to detect dogs in images. Same weights that have trained on ImageNet dataset (a very large, very popular dataset having over 10 million images and over 1000 different categories) were used.
+
+In data preprocessing step the images were converted to 4-D tensors and vertically stacked. In Imagenet dataset the key values from 151-268 inclusive contains all dog categories. so the dog detector will return true if the prediction of the ResNet-50 model lies between 151-268.
+
+## Step 4 : Creating CNN from scratch
+Here we have created a 5 layer CNN model 
 
