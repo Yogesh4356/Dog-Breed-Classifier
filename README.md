@@ -5,12 +5,22 @@ First it'll try to detect if human face is in image and give the estimation of m
 
 Complete roadmap is here :
 
-    1. Import Dataset
+    1. Import dataset
     
-    2. Detect Humans
+    2. Detect humans
     
-    3. Detect Dogs
+    3. Detect dogs
     
     4. Creating a CNN (from scratch)
     
     5. Use a pretrained CNN (from transfer learning)
+    
+    6. Write final algorithm
+    
+    7. Prediction
+    
+## step 1 : Import dataset
+The dog dataset was downloaded from (https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip), the human dataset was downloaded from (https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip). 
+
+There were 133 total dog categories, 8351 total dog images, 6680 training dog images, 835 validation dog images, 836 test dog images and 13233 total human images.
+
