@@ -43,3 +43,6 @@ In data preprocessing step the images were converted to 4-D tensors and vertical
 ## Step 4 : Creating CNN from scratch
 Here we have created a 5 layer CNN model 
 
+![image](https://user-images.githubusercontent.com/78688225/132838924-7fd4fa08-08a0-4117-a2a4-25dd849d7329.png)
+
+
